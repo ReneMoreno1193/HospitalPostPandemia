@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar paciente</title>
+</head>
+<body>
+<h1>EDITAR PACIENTE</h1>
+<form th:action="@{/editarPaciente/{id}}" method="post">
+    <!-- en el action pongo el nombre del endpoint -->
+    <input type="hidden" name="id" th:value="${patient.id}">
+    <input type="text" name="nombre" placeholder="Nombre" th:value="${patient.firstName}" required>
+    <input type="text" name="autor" placeholder="Apellido" th:value="${patient.lastName}" required>
+    <input type="text" name="rut" placeholder="RUT" th:value="${patient.RUT}"  required>
+    <input type="text" name="edad" placeholder="Edad" th:value="${patient.age}" required>
+    <input type="text" name="email" placeholder="Email" th:value="${patient.email}"  required>
+    <button type="submit">GUARDAR</button>
+</form>
+</body>
+</html>
